@@ -71,6 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondRoute()));
+              },
+              child: const Text('deneme'),
+            ),
           ],
         ),
       ),
@@ -95,5 +101,26 @@ class YourRect extends CustomPainter {
   @override
   bool shouldRepaint(YourRect oldDelegate) {
     return false;
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            debugPrint('ihihi');
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
   }
 }
