@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Kutimo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Kutimo'),
     );
   }
 }
@@ -39,6 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime today = DateTime.now();
+    String dateSlug =
+        "${today.year.toString()}/${today.month.toString().padLeft(2, '0')}/${today.day.toString()}";
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -47,12 +51,25 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              dateSlug,
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            const Text('What color is your day?'),
+            GestureDetector(
+              onTap: () {
+                debugPrint("hello");
+              },
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: CustomPaint(
+                  painter: (YourRect()),
+                ),
+              ),
             ),
           ],
         ),
@@ -63,5 +80,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ),
     );
+  }
+}
+
+class YourRect extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawRect(
+      const Rect.fromLTRB(0.0, 0.0, 50.0, 50.0),
+      Paint()..color = const Color(0xFF0099FF),
+    );
+  }
+
+  @override
+  bool shouldRepaint(YourRect oldDelegate) {
+    return false;
   }
 }
