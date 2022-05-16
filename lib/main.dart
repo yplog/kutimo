@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:kutimo/screens/add_color_screen.dart';
+import 'package:path/path.dart' as Path;
+import 'package:sqflite/sqflite.dart';
 
 import 'screens/color_screen.dart';
 
