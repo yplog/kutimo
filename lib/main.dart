@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kutimo/utils/custom_rect_drawer.dart';
+
+import 'screens/color_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,13 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 50,
                 height: 50,
                 child: CustomPaint(
-                  painter: (YourRect()),
+                  painter: (CustomRectDrawer(50.0, 0xFF0099FF)),
                 ),
               ),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const SecondRoute()));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ColorScreen()));
               },
               child: const Text('deneme'),
             ),
@@ -84,42 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class YourRect extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawRect(
-      const Rect.fromLTRB(0.0, 0.0, 50.0, 50.0),
-      Paint()..color = const Color(0xFF0099FF),
-    );
-  }
-
-  @override
-  bool shouldRepaint(YourRect oldDelegate) {
-    return false;
-  }
-}
-
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            debugPrint('ihihi');
-          },
-          child: const Text('Go back!'),
-        ),
       ),
     );
   }
