@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kutimo/screens/add_color_screen.dart';
 import 'dart:async';
-import 'package:kutimo/utils/custom_rect_drawer.dart';
+import 'package:kutimo/screens/add_color_screen.dart';
 
 import 'screens/color_screen.dart';
 
@@ -32,9 +31,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Future<bool> deneme() async {
-    var result;
+    bool result = false;
     await Future.delayed(const Duration(seconds: 3)).then((_) {
-      print('Deneme');
       result = true;
     });
     return result;
@@ -43,15 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    print('init state');
-    print('Done');
     deneme().then((bool result) {
-      print('result $result');
       if (result) {
-        print('if');
+        // Color Screen
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ColorScreen()));
       } else {
-        print('else');
+        // Add Color Screen
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const AddColorScreen()));
       }
     });
