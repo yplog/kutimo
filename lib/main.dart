@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:kutimo/screens/add_color_screen.dart';
@@ -43,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+
     deneme().then((bool result) {
       if (result) {
         // Color Screen
