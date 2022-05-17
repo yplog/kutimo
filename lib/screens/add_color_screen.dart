@@ -9,6 +9,7 @@ class AddColorScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Add Color Screen'),
       ),
+      backgroundColor: const Color(0xffffffff),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
