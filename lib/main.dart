@@ -1,14 +1,18 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 import 'dart:async';
 import 'package:kutimo/screens/add_color_screen.dart';
-import 'package:path/path.dart' as Path;
-import 'package:sqflite/sqflite.dart';
 
+import 'models/rectangle.dart';
 import 'screens/color_screen.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter('kutimo');
+  Hive.registerAdapter(RectangleAdapter());
+  Hive.registerAdapter(RecColorAdapter());
+  await Hive.openBox<Rectangle>('rectangles');
+
   runApp(const MyApp());
 }
 
@@ -34,11 +38,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<bool> deneme() async {
-    bool result = false;
-    await Future.delayed(const Duration(seconds: 3)).then((_) {
-      result = true;
-    });
+  Future<bool> boxOperations() async {
+    bool result = true;
+
+    var box = Hive.box<Rectangle>('rectangles');
+
+    if (box.isEmpty) {
+      result = false;
+    }
+
+    if (box.length > 0) {
+      DateTime today = DateTime.now();
+      String todaySlug =
+          "${today.year.toString()}/${today.month.toString().padLeft(2, '0')}/${today.day.toString()}";
+
+      Rectangle? lastRec = box.getAt(box.length);
+
+      DateTime? createdDate = lastRec?.createdDate;
+
+      String createdDateSlug =
+          "${createdDate?.year.toString()}/${createdDate?.month.toString().padLeft(2, '0')}/${createdDate?.day.toString()}";
+
+      if (todaySlug != createdDateSlug) {
+        result = false;
+      }
+    }
+
+    print('box size: ${box.isEmpty}, ${box.length}, result: $result');
+
     return result;
   }
 
@@ -46,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
-    deneme().then((bool result) {
+    boxOperations().then((bool result) {
       if (result) {
         // Color Screen
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ColorScreen()));

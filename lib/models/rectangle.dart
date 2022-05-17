@@ -1,29 +1,43 @@
-import 'dart:math';
+import 'package:hive/hive.dart';
 
+part 'rectangle.g.dart';
+
+@HiveType(typeId: 1)
 class Rectangle {
+  @HiveField(0, defaultValue: 0)
   final int id;
+
+  @HiveField(1)
   final String note;
-  final DateTime date;
-  final String color;
 
-  const Rectangle({
-    required this.id,
-    required this.note,
-    required this.color,
-    required this.date
-  });
+  @HiveField(2)
+  final RecColor color;
 
-  factory Rectangle.fromMap(Map<String, dynamic> json) => Rectangle(
-    id: json["id"],
-    note: json["note"],
-    color: json["color"],
-    date: json["date"]
-  );
+  @HiveField(3)
+  final DateTime createdDate;
+  
+  Rectangle(this.id, this.note, this.color, this.createdDate);
 
-  Map<String, dynamic> toMap() => {
-    "id": id,
-    "note": note,
-    "color": color,
-    "date": date
-  };
+  @override
+  String toString() {
+    return '$id - $color - $createdDate - $note';
+  }
+}
+
+@HiveType(typeId: 2)
+enum RecColor {
+  @HiveField(0)
+  RED,
+
+  @HiveField(1)
+  GREEN,
+
+  @HiveField(2)
+  YELLOW,
+
+  @HiveField(3, defaultValue: true)
+  BLACK,
+
+  @HiveField(4)
+  PURPLE,
 }
