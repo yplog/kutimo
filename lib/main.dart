@@ -22,9 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0x00000000)
-      ),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0x00000000)),
       home: const MyHomePage(),
     );
   }
@@ -49,17 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (box.length > 0) {
       DateTime today = DateTime.now();
-      String todaySlug =
-          "${today.year.toString()}/${today.month.toString().padLeft(2, '0')}/${today.day.toString()}";
-
       Rectangle? lastRec = box.getAt(box.length);
 
-      DateTime? createdDate = lastRec?.createdDate;
-
-      String createdDateSlug =
-          "${createdDate?.year.toString()}/${createdDate?.month.toString().padLeft(2, '0')}/${createdDate?.day.toString()}";
-
-      if (todaySlug != createdDateSlug) {
+      if (today.year != lastRec?.createdDate.year ||
+          today.month != lastRec?.createdDate.year ||
+          today.day != lastRec?.createdDate.day) {
         result = false;
       }
     }
@@ -76,13 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
     boxOperations().then((bool result) {
       if (result) {
         // Color Screen
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ColorScreen()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const ColorScreen()));
       } else {
         // Add Color Screen
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const AddColorScreen()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const AddColorScreen()));
       }
     });
-
   }
 
   @override
@@ -91,9 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset('assets/images/kutimo.png')
-          ],
+          children: <Widget>[Image.asset('assets/images/kutimo.png')],
         ),
       ),
     );
