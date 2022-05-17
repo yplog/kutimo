@@ -66,6 +66,8 @@ class RecColorAdapter extends TypeAdapter<RecColor> {
         return RecColor.BLACK;
       case 4:
         return RecColor.PURPLE;
+      case 5:
+        return RecColor.BLUE;
       default:
         return RecColor.BLACK;
     }
@@ -88,6 +90,9 @@ class RecColorAdapter extends TypeAdapter<RecColor> {
         break;
       case RecColor.PURPLE:
         writer.writeByte(4);
+        break;
+      case RecColor.BLUE:
+        writer.writeByte(5);
         break;
     }
   }
