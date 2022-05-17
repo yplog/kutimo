@@ -53,7 +53,7 @@ class _AddColorScreenState extends State<AddColorScreen> {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.blue),
+                      decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Colors.blue),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: _isBlue
@@ -82,7 +82,7 @@ class _AddColorScreenState extends State<AddColorScreen> {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                      decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Colors.red),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: _isRed
@@ -111,7 +111,7 @@ class _AddColorScreenState extends State<AddColorScreen> {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.yellow),
+                      decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Colors.yellow),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: _isYellow
@@ -140,7 +140,7 @@ class _AddColorScreenState extends State<AddColorScreen> {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.green),
+                      decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Colors.green),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: _isGreen
@@ -169,7 +169,7 @@ class _AddColorScreenState extends State<AddColorScreen> {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.purple),
+                      decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Colors.purple),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: _isPurple
@@ -198,7 +198,7 @@ class _AddColorScreenState extends State<AddColorScreen> {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                      decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Colors.black),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: _isBlack
@@ -223,7 +223,15 @@ class _AddColorScreenState extends State<AddColorScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          // TODO: new Rectangle object created and save.
           print(noteController.text);
+          if (_isBlack) print('black');
+          if (_isPurple) print('purple');
+          if (_isGreen) print('green');
+          if (_isRed) print('red');
+          if (_isBlue) print('blue');
+          if (_isYellow) print('yellow');
+          print('Date: ${DateTime.now()}');
         },
         tooltip: 'Add new color',
         splashColor: Colors.deepPurple,
