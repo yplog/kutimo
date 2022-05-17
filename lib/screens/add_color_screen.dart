@@ -19,9 +19,6 @@ class _AddColorScreenState extends State<AddColorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Add Color Screen'),
-      ),
       backgroundColor: const Color(0xffffffff),
       body: Container(
         margin: const EdgeInsets.all(20),

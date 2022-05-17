@@ -7,9 +7,6 @@ class ColorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
-      appBar: AppBar(
-        title: const Text('Color Screen'),
-      ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
