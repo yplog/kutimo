@@ -40,4 +40,7 @@ enum RecColor {
 
   @HiveField(4)
   PURPLE,
+
+  @HiveField(5)
+  BLUE,
 }
