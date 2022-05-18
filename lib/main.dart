@@ -13,6 +13,7 @@ Future<void> main() async {
   Hive.registerAdapter(RecColorAdapter());
   await Hive.openBox<Rectangle>('rectangles');
 
+
   runApp(const MyApp());
 }
 
@@ -47,11 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (box.length > 0) {
       DateTime today = DateTime.now();
-      Rectangle? lastRec = box.getAt(box.length);
+      Rectangle? lastRec = box.getAt(box.length - 1);
 
-      if (today.year != lastRec?.createdDate.year ||
-          today.month != lastRec?.createdDate.year ||
-          today.day != lastRec?.createdDate.day) {
+      if (today.year == lastRec?.createdDate.year && today.month == lastRec?.createdDate.month && today.day == lastRec?.createdDate.day) {
+        result = true; // TODO: screen change true
+      } else {
         result = false;
       }
     }
