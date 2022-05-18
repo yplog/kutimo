@@ -26,8 +26,8 @@ class _ColorScreenState extends State<ColorScreen> {
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () =>
-                                    Navigator.pop(context, 'Cancel'),
-                                child: const Text('Ok'),
+                                    Navigator.pop(context, 'OK'),
+                                child: const Text('OK'),
                               ),
                             ])),
                 child: Text('$index'),
