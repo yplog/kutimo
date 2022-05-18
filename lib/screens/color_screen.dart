@@ -13,16 +13,29 @@ class _ColorScreenState extends State<ColorScreen> {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       body: SafeArea(
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              debugPrint('ihihi');
-            },
-            child: const Text('Go back!'),
-          ),
+        child: GridView.count(
+          crossAxisCount: 10,
+          children: List.generate(100, (index) {
+            return Center(
+              child: InkWell(
+                onTap: () => showDialog(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                            title: Text('$index'),
+                            content: const Text('Desc'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Cancel'),
+                                child: const Text('Ok'),
+                              ),
+                            ])),
+                child: Text('$index'),
+              ),
+            );
+          }),
         ),
       ),
     );
   }
 }
-
