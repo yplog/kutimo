@@ -12,13 +12,14 @@ class ColorScreen extends StatefulWidget {
 
 class _ColorScreenState extends State<ColorScreen> {
   int colorToInt(recColor) {
-    var color = 0xFFFFFFFF;
+    var color;
 
     if (RecColor.BLACK == recColor) color = 0xFF000000;
     if (RecColor.PURPLE == recColor) color = 0xFF9C27B0;
     if (RecColor.RED == recColor) color = 0xFFF44336;
     if (RecColor.BLUE == recColor) color = 0xFF2196F3;
     if (RecColor.YELLOW == recColor) color = 0xFFFFEB3B;
+    if (RecColor.WHITE == recColor) color = 0xFFFFFFFF;
 
     return color;
   }
