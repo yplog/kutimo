@@ -20,6 +20,7 @@ class _ColorScreenState extends State<ColorScreen> {
     if (RecColor.BLUE == recColor) color = 0xFF2196F3;
     if (RecColor.YELLOW == recColor) color = 0xFFFFEB3B;
     if (RecColor.WHITE == recColor) color = 0xFFFFFFFF;
+    if (RecColor.GREEN == recColor) color = 0xFF4CAF50;
 
     return color;
   }
@@ -51,8 +52,8 @@ class _ColorScreenState extends State<ColorScreen> {
                             onTap: () => showDialog(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                        title:
-                                            Text(dateFormat(currentRec?.createdDate)),
+                                        title: Text(dateFormat(
+                                            currentRec?.createdDate)),
                                         content: Text('${currentRec?.note}'),
                                         actions: <Widget>[
                                           TextButton(
