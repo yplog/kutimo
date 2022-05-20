@@ -249,7 +249,10 @@ class _AddColorScreenState extends State<AddColorScreen> {
           if (_isBlue) color = RecColor.BLUE;
           if (_isYellow) color = RecColor.YELLOW;
 
-          addColor(noteController.text, color);
+          if (color != null && noteController.text != "") {
+            addColor(noteController.text, color);
+          }
+
         },
         tooltip: 'Add new color',
         splashColor: Colors.deepPurple,
