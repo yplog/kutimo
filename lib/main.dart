@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: const Color(0x00000000)),
       home: const MyHomePage(),
     );
@@ -51,13 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
       Rectangle? lastRec = box.getAt(box.length - 1);
 
       if (today.year == lastRec?.createdDate.year && today.month == lastRec?.createdDate.month && today.day == lastRec?.createdDate.day) {
-        result = true; // TODO: screen change true
+        result = true;
       } else {
         result = false;
       }
     }
-
-    print('box size: ${box.isEmpty}, ${box.length}, result: $result');
 
     return result;
   }
