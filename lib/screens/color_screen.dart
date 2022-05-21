@@ -46,7 +46,8 @@ class _ColorScreenState extends State<ColorScreen> {
                             mainAxisSpacing: 0),
                     itemCount: box.values.length,
                     itemBuilder: (context, index) {
-                      Rectangle? currentRec = box.getAt(index);
+                      var reversedBox = List.from(box.values).reversed;
+                      Rectangle? currentRec = reversedBox.elementAt(index);
                       return Center(
                         child: InkWell(
                             onTap: () => showDialog(
