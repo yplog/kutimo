@@ -31,8 +31,6 @@ dependencies:
     sdk: flutter
   hive:
   hive_flutter:
-  flutter_launcher_icons:
-
 
   cupertino_icons: ^1.0.2
 
