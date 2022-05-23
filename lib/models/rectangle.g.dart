@@ -57,46 +57,46 @@ class RecColorAdapter extends TypeAdapter<RecColor> {
   RecColor read(BinaryReader reader) {
     switch (reader.readByte()) {
       case 0:
-        return RecColor.RED;
+        return RecColor.red;
       case 1:
-        return RecColor.GREEN;
+        return RecColor.green;
       case 2:
-        return RecColor.YELLOW;
+        return RecColor.yellow;
       case 3:
-        return RecColor.BLACK;
+        return RecColor.black;
       case 4:
-        return RecColor.PURPLE;
+        return RecColor.purple;
       case 5:
-        return RecColor.BLUE;
+        return RecColor.blue;
       case 6:
-        return RecColor.WHITE;
+        return RecColor.white;
       default:
-        return RecColor.BLACK;
+        return RecColor.black;
     }
   }
 
   @override
   void write(BinaryWriter writer, RecColor obj) {
     switch (obj) {
-      case RecColor.RED:
+      case RecColor.red:
         writer.writeByte(0);
         break;
-      case RecColor.GREEN:
+      case RecColor.green:
         writer.writeByte(1);
         break;
-      case RecColor.YELLOW:
+      case RecColor.yellow:
         writer.writeByte(2);
         break;
-      case RecColor.BLACK:
+      case RecColor.black:
         writer.writeByte(3);
         break;
-      case RecColor.PURPLE:
+      case RecColor.purple:
         writer.writeByte(4);
         break;
-      case RecColor.BLUE:
+      case RecColor.blue:
         writer.writeByte(5);
         break;
-      case RecColor.WHITE:
+      case RecColor.white:
         writer.writeByte(6);
         break;
     }

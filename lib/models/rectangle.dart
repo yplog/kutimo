@@ -27,23 +27,23 @@ class Rectangle {
 @HiveType(typeId: 2)
 enum RecColor {
   @HiveField(0)
-  RED,
+  red,
 
   @HiveField(1)
-  GREEN,
+  green,
 
   @HiveField(2)
-  YELLOW,
+  yellow,
 
   @HiveField(3, defaultValue: true)
-  BLACK,
+  black,
 
   @HiveField(4)
-  PURPLE,
+  purple,
 
   @HiveField(5)
-  BLUE,
+  blue,
 
   @HiveField(6)
-  WHITE,
+  white,
 }

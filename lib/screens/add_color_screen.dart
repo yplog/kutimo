@@ -242,12 +242,12 @@ class _AddColorScreenState extends State<AddColorScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           var color;
-          if (_isBlack) color = RecColor.BLACK;
-          if (_isPurple) color = RecColor.PURPLE;
-          if (_isGreen) color = RecColor.GREEN;
-          if (_isRed) color = RecColor.RED;
-          if (_isBlue) color = RecColor.BLUE;
-          if (_isYellow) color = RecColor.YELLOW;
+          if (_isBlack) color = RecColor.black;
+          if (_isPurple) color = RecColor.purple;
+          if (_isGreen) color = RecColor.green;
+          if (_isRed) color = RecColor.red;
+          if (_isBlue) color = RecColor.blue;
+          if (_isYellow) color = RecColor.yellow;
 
           if (color != null && noteController.text != "") {
             addColor(noteController.text, color);
