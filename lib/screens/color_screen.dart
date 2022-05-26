@@ -74,6 +74,14 @@ class _ColorScreenState extends State<ColorScreen> {
                       );
                     });
               })),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print("Pressed");
+        },
+        tooltip: 'Settings',
+        splashColor: Colors.deepPurple,
+        child: const Icon(Icons.settings),
+      ),
     );
   }
 }
