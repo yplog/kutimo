@@ -10,16 +10,25 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      body: const Center(
-        child: Text(
-          'This is the settings screen',
-          style: TextStyle(fontSize: 24),
-        ),
+      body: Column(
+        children: [
+          const SizedBox(height: 30),
+          Center(
+            child: ElevatedButton(
+              style: style,
+              onPressed: () {},
+              child: const Text('Clear All Data'),
+            )
+          ),
+        ],
       ),
     );
   }
