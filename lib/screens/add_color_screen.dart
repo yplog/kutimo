@@ -251,6 +251,10 @@ class _AddColorScreenState extends State<AddColorScreen> {
 
           if (color != null && noteController.text != "") {
             addColor(noteController.text, color);
+          } else {
+            const snackBar = SnackBar(content: Text('Please fill in all the fields.'));
+
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
           }
 
         },
