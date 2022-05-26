@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:kutimo/models/rectangle.dart';
+import 'package:kutimo/screens/settings_screen.dart';
 import 'package:kutimo/utils/custom_rect_drawer.dart';
 
 class ColorScreen extends StatefulWidget {
@@ -76,7 +77,7 @@ class _ColorScreenState extends State<ColorScreen> {
               })),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Pressed");
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingScreen()));
         },
         tooltip: 'Settings',
         splashColor: Colors.deepPurple,
