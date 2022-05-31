@@ -9,4 +9,4 @@ This is a Flutter learning project. It has many flaws and needs refactoring. My 
 
 [Web](https://yalinpala.dev/kutimo/#/)
 
-[Desktop](https://github.com/yplog/kutimo/releases/tag/v1)
+[Desktop](https://github.com/yplog/kutimo/releases/tag/v1.1)
