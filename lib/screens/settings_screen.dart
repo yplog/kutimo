@@ -15,15 +15,19 @@ class _SettingScreenState extends State<SettingScreen> {
     Box<Rectangle> rectanglesBox = Hive.box<Rectangle>('rectangles');
     rectanglesBox.deleteAll(rectanglesBox.keys);
 
+    const snackBar = SnackBar(
+        content: Text('All data cleared. Now you can start with a new box.'));
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const AddColorScreen()));
   }
-  
-  
+
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
 
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
@@ -34,14 +38,13 @@ class _SettingScreenState extends State<SettingScreen> {
         children: [
           const SizedBox(height: 30),
           Center(
-            child: ElevatedButton(
-              style: style,
-              onPressed: () {
-                removeAllData();
-              },
-              child: const Text('Clear All Data'),
-            )
-          ),
+              child: ElevatedButton(
+            style: style,
+            onPressed: () {
+              removeAllData();
+            },
+            child: const Text('Clear All Data'),
+          )),
         ],
       ),
     );
