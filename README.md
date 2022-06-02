@@ -7,6 +7,8 @@ This is a Flutter learning project. It has many flaws and needs refactoring. My 
 
 [Play Store](https://play.google.com/store/apps/details?id=com.kutimo.kutimo)
 
+[Snapcraft](https://snapcraft.io/kutimo)
+
 [Web](https://yalinpala.dev/kutimo/#/)
 
 [Desktop](https://github.com/yplog/kutimo/releases/tag/v1.1)
