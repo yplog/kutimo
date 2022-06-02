@@ -1,0 +1,24 @@
+name: kutimo
+version: '1.2.5'
+summary: A note and color every day.
+description: A note and color every day. Track your past. See what kind of map you'll end up with.
+icon: snap/gui/kutimo.png
+
+confinement: strict 
+base: core18
+grade: stable
+
+parts:
+  kutimo:
+    source: https://github.com/yplog/kutimo.git
+    plugin: flutter
+    flutter-target: lib/main.dart
+
+
+apps:
+  kutimo:
+    command: kutimo
+    extensions: [flutter-master]
+    plugs:
+    - network
+    - home
