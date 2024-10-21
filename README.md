@@ -1,5 +1,11 @@
+# Project Status: Archived
+
+This project has been archived on GitHub and is no longer actively maintained. The repository has been made read-only, and no new features or bug fixes will be added.
+
+> **Note**: For more information, you can read about [archiving repositories on GitHub](https://docs.github.com/en/repositories/archiving-a-github-repository).
+
+
 # kutimo
-## Kutimo Project
 A note and color every day. Track your past. See what kind of map you'll end up with.
 
 ## Note
